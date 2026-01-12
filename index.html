@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migrant Worker Health Research - Network Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e4d3d 0%, #2d5a4a 50%, #90c8ac 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            color: #c8e6c9;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .meta {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .card {
+            background: #f5f5eb;
+            border-radius: 20px;
+            padding: 30px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: #4c9980;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .card h2 {
+            color: #1e4d3d;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+        
+        .card p {
+            color: #2d5a4a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .card-stats {
+            display: flex;
+            gap: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #90c8ac;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            color: #1e4d3d;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: #4c9980;
+            font-size: 0.8rem;
+        }
+        
+        .click-hint {
+            color: #4c9980;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+        
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: #c8e6c9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 Geographic Knowledge Flow Analysis</h1>
+            <p class="subtitle">Migrant Worker Health Research Network</p>
+            <p class="meta">Based on Van der Horst et al. (2025) Systematic Review | 127 Studies</p>
+        </header>
+        
+        <div class="cards">
+            <a href="bipartite_network_interactive.html" class="card">
+                <div class="card-icon">🔗</div>
+                <h2>Bipartite Network</h2>
+                <p>Full host-origin network showing migration corridors between study locations and migrant origin countries.</p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <div class="stat-value">29</div>
+                        <div class="stat-label">Host Countries</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">50</div>
+                        <div class="stat-label">Origin Countries</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">89</div>
+                        <div class="stat-label">Corridors</div>
+                    </div>
+                </div>
+                <p class="click-hint">→ Click to explore</p>
+            </a>
+            
+            <a href="host_projection_interactive.html" class="card">
+                <div class="card-icon">🏛️</div>
+                <h2>Host Country Projection</h2>
+                <p>Shows which host countries study similar migrant populations. Connected countries share research focus.</p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <div class="stat-value">58</div>
+                        <div class="stat-label">Nodes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">141</div>
+                        <div class="stat-label">Edges</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">0.085</div>
+                        <div class="stat-label">Density</div>
+                    </div>
+                </div>
+                <p class="click-hint">→ Click to explore</p>
+            </a>
+            
+            <a href="origin_projection_interactive.html" class="card">
+                <div class="card-icon">🌐</div>
+                <h2>Origin Country Projection</h2>
+                <p>Shows which migrant origin countries are co-studied together in the same host country contexts.</p>
+                <div class="card-stats">
+                    <div class="stat">
+                        <div class="stat-value">67</div>
+                        <div class="stat-label">Nodes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">238</div>
+                        <div class="stat-label">Edges</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">0.108</div>
+                        <div class="stat-label">Density</div>
+                    </div>
+                </div>
+                <p class="click-hint">→ Click to explore</p>
+            </a>
+        </div>
+        
+        <footer>
+            <p>Interactive Network Analysis | Created with Python, NetworkX & PyVis</p>
+            <p style="margin-top: 10px;">💡 Tip: Zoom, pan, drag nodes, and hover for details</p>
+        </footer>
+    </div>
+</body>
+</html>
